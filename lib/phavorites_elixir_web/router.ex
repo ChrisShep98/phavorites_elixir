@@ -20,6 +20,12 @@ defmodule PhavoritesElixirWeb.Router do
     get "/", PageController, :home
   end
 
+
+  scope "/api", PhavoritesElixirWeb do
+    pipe_through :api # helps with middleware
+    resources "/users", UserController, except: [:new, :edit]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", PhavoritesElixirWeb do
   #   pipe_through :api

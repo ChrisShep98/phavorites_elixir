@@ -15,6 +15,6 @@ defmodule PhavoritesElixir.Accounts.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:username, :email, :password, :profile_picture])
-    |> validate_required([:username, :email, :password, :profile_picture])
+    |> validate_required([:username, :email, :password])
   end
 end

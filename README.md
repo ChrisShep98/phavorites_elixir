@@ -1,5 +1,8 @@
 # PhavoritesElixir
 
+Ran this migration:
+`mix phx.gen.json Accounts User users username:string email:string password:string profile_picture:string`
+
 To start your Phoenix server:
 
 * Run `mix setup` to install and setup dependencies
