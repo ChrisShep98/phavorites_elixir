@@ -1,7 +1,8 @@
 # PhavoritesElixir
 
-Ran this migration:
+Ran these generations:
 `mix phx.gen.json Accounts User users username:string email:string password:string profile_picture:string`
+`mix phx.gen.json Music Song songs song_name:string data:string venue_name:string venue_location:string vote_count:integer voted_by:references:users user_who_posted:references:users description:string slug:string`
 
 To start your Phoenix server:
 
