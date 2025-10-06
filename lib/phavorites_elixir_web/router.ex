@@ -24,6 +24,8 @@ defmodule PhavoritesElixirWeb.Router do
   scope "/api", PhavoritesElixirWeb do
     pipe_through :api # helps with middleware
     resources "/users", UserController, except: [:new, :edit]
+    resources "/songs", SongController, except: [:new, :edit]
+    resources "/comments", CommentController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
