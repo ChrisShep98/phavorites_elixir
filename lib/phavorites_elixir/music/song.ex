@@ -10,8 +10,12 @@ defmodule PhavoritesElixir.Music.Song do
     field :vote_count, :integer
     field :description, :string
     field :slug, :string
-    field :voted_by, :id
-    field :user_who_posted, :id
+
+    belongs_to :voted_by, PhavoritesElixir.Accounts.User
+    belongs_to :user_who_posted, PhavoritesElixir.Accounts.User
+
+    has_many :comments, PhavoritesElixir.Music.Comment
+
 
     timestamps(type: :utc_datetime)
   end

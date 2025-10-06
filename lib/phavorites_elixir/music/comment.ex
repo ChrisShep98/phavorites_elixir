@@ -4,8 +4,10 @@ defmodule PhavoritesElixir.Music.Comment do
 
   schema "comments" do
     field :comment, :string
-    field :song_id, :id
-    field :user_id, :id
+
+    belongs_to :song_id, PhavoritesElixir.Music.Song
+    belongs_to :user_id, PhavoritesElixir.Accounts.User
+
 
     timestamps(type: :utc_datetime)
   end
