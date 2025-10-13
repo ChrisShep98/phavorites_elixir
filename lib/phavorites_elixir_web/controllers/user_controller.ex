@@ -3,6 +3,7 @@ defmodule PhavoritesElixirWeb.UserController do
 
   alias PhavoritesElixir.Accounts
   alias PhavoritesElixir.Accounts.User
+  alias PhavoritesElixirWeb.ErrorJSON
 
   action_fallback PhavoritesElixirWeb.FallbackController
 
@@ -17,6 +18,11 @@ defmodule PhavoritesElixirWeb.UserController do
       |> put_status(:created)
       |> put_resp_header("location", ~p"/api/users/#{user}")
       |> render(:show, user: user)
+    else
+      {:error, changeset} ->
+        conn
+        |> put_status(:unprocessable_entity)
+        |> json(%{errors: ErrorJSON.errors_on(changeset)})
     end
   end
 
