@@ -26,6 +26,7 @@ defmodule PhavoritesElixirWeb.Router do
     resources "/users", UserController, except: [:new, :edit]
     resources "/songs", SongController, except: [:new, :edit]
     resources "/comments", CommentController, except: [:new, :edit]
+    post "/auth/login", AuthController, :login
   end
 
   # Other scopes may use custom stacks.
